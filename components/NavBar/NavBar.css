@@ -1,0 +1,80 @@
+.sidenav {
+  height: 100%;
+  width: 106px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  position: fixed;
+  overflow: auto;
+}
+
+.sidenav-menus a {
+  position: relative;
+  text-decoration: none;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.sidenav-menus a.active::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  background: linear-gradient(180.14deg, #fda9ff 0.12%, #c9b8ff 27.33%, #4dffe5 99.92%);
+  width: 5px;
+  height: 100%;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.icon-img {
+  position: relative;
+  transition: 0.3s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-hover {
+  opacity: 0;
+  position: absolute;
+}
+
+.sidenav-menus a:not(.active):hover .icon-img .icon-hover {
+  opacity: 1;
+  position: initial;
+}
+
+.sidenav-menus a:not(.active):hover .icon-img .icon-default {
+  opacity: 0;
+  position: absolute;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar.open {
+  left: 0;
+  opacity: 1;
+}
+
+.connect-wallet-mobile {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
